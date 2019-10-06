@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import{createAppContainer} from 'react-navigation';
-import { createBottomTabNavigator} from 'react-navigation-tabs';
+import { createAppContainer } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { createStackNavigator } from 'react-navigation-stack';
 
-import HomeScreen from './Home';
-import AboutScreen from './about';
-import SettingScreen from './Settings';
+// Import the Welcoming Page and Tabs
 import LoginScreen from './Login';
+import tabs from './tabs';
 
-// Establish a Variable
-const tabNavigator = createBottomTabNavigator({
-  Home: HomeScreen,
-  About: AboutScreen,
-  Settings: SettingScreen
+const stackNavigator = createStackNavigator({
+  Login: LoginScreen,
+  tabs: tabs
 })
 
+
 // Recalling the tabNavigator 
-export default createAppContainer(tabNavigator)
+export default createAppContainer(stackNavigator)
 
 
 
